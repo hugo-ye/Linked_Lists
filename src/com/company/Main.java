@@ -3,16 +3,6 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-        example2();
-    }
-
-    public static void example2() {
-        Node head = new Node(5);
-        head.add(-15);
-        head.add(4);
-
-        remove(head, 4);
-        head.print();
     }
 
     static boolean find(Node node, int value) {
@@ -24,6 +14,20 @@ public class Main {
         }
 
         return (find(node.next, value));
+
+    }
+
+    static boolean findIter(Node node, int value) {
+        Node current = node;
+        while (current != null) {
+            if (current.value == value) {
+                return true;
+            } else {
+                current = current.next;
+            }
+        }
+        return false;
+
 
     }
 
@@ -47,20 +51,6 @@ public class Main {
             }
             return head;
         }
-    }
-
-    static boolean findIter(Node node, int value) {
-        Node current = node;
-        while (current != null) {
-            if (current.value == value) {
-                return true;
-            } else {
-                current = current.next;
-            }
-        }
-        return false;
-
-
     }
 
 }
